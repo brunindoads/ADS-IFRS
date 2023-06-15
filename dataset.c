@@ -1,4 +1,7 @@
 #include <time.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "dataset.h"
 
 void generateData(int data[], int size) { //Gera os dados recebendo o array e o tamanho desejado.

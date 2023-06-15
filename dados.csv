@@ -1,0 +1,13 @@
+ALGORITMO;DATA_SET;SEGUNDOS
+Selection Sort;1;3,014000
+Selection Sort;2;11,569000
+Selection Sort;3;27,009000
+Selection Sort;4;47,864000
+Bubble Sort;1;7,652000
+Bubble Sort;2;29,908000
+Bubble Sort;3;68,799000
+Bubble Sort;4;120,416000
+Binary Search;1;0,000000
+Binary Search;2;0,000000
+Binary Search;3;0,000000
+Binary Search;4;0,000000
