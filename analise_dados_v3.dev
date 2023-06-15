@@ -1,7 +1,7 @@
 [Project]
 FileName=analise_dados_v3.dev
 Name=analise_dados_v3
-UnitCount=11
+UnitCount=13
 Type=1
 Ver=1
 ObjFiles=
@@ -12,7 +12,7 @@ ResourceIncludes=
 MakeIncludes=
 Compiler=
 CppCompiler=
-Linker= -Wl,--stack,99999999_@@_
+Linker=-Wl,--stack,99999999_@@_
 IsCpp=0
 Icon=
 ExeOutput=
@@ -149,6 +149,26 @@ BuildCmd=
 
 [Unit11]
 FileName=binarysearch.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit12]
+FileName=linearsearch.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit13]
+FileName=linearsearch.h
 CompileCpp=0
 Folder=
 Compile=1
