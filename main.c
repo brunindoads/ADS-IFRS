@@ -34,6 +34,7 @@ int* data_8;
   
 // Contador para quantidade de rodadas que o código deve ter.
 int count = 0; 
+int rounds = 10;
 
 int main(int argc, char *argv[])
 {
@@ -66,7 +67,7 @@ int main(int argc, char *argv[])
 
   freopen("dados.csv", "w", stdout); // Redireciona a saída padrão para o arquivo.
   
-  while(count != 1){
+  while(count != rounds){
               
   // Controle das rodadas.
   printf("Rodada de numero %d.\n\n", count);

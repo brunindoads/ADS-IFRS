@@ -2,19 +2,5 @@ Rodada de numero 0.
 
 ALGORITMO;DATA_SET;SEGUNDOS
 Selection Sort;1;0,000000
-Selection Sort;2;0,001000
-Selection Sort;3;0,136000
-Selection Sort;4;11,673000
-Bubble Sort;1;0,000000
-Bubble Sort;2;0,003000
-Bubble Sort;3;0,300000
-Bubble Sort;4;30,084000
-Binary Search;1;0,000000
-Binary Search;2;0,000000
-Binary Search;3;0,000000
-Binary Search;4;0,001000
-Linear Search;1;0,000000
-Linear Search;2;0,009000
-Linear Search;3;0,083000
-Linear Search;4;0,841000
-
+Selection Sort;2;0,002000
+Selection Sort;3;0,133000
