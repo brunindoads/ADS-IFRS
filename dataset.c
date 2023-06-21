@@ -12,6 +12,14 @@ void generateData(int data[], int size) { //Gera os dados recebendo o array e o 
     }
 }
 
+void generateDataForSearch(int data[], int size) { //Gera os dados recebendo o array maior e o tamanho desejado para utilizar com as buscas.
+    int i;
+    
+    for (i = 0; i < size; i++) {
+        data[i] = i;
+    }
+}
+
 void printData(int data[], int size) { //Verificação para saber se os dados estão sendo gerados corretamente. Não interefere no funcionamento do código.
     int i;
     

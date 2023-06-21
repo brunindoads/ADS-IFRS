@@ -30,37 +30,19 @@ int binarySearch(int data[], int size, int value) {
     return -1;
 }
 
-void timeBinarySearch(int data[], int size, int value_1, int value_2, int value_3, int value_4, int value_5, int value_6, int value_7, int value_8, int value_9, int value_10, int data_set){
-    // Medição de tempo
-    long long start = getTime();
+void timeBinarySearch(int data[], int size, int value, int data_set){
+    // Medição de tempo.
+    clock_t start, end; // Variáveis para controle de início e fim do tempo de execução.
+    double cpu_time_used; // Variável para salvar o tempo de execução.
+    start = clock(); // Inicia a contagem.
     
-    // Faz 10 buscas de 10 valores diferente, mas ainda assim, o tempo é insignificante.
-    int index_1 = binarySearch(data, size, value_1); // Faz a busca.
-    int index_2 = binarySearch(data, size, value_2); // Faz a busca.
-    int index_3 = binarySearch(data, size, value_3); // Faz a busca.
-    int index_4 = binarySearch(data, size, value_4); // Faz a busca.
-    int index_5 = binarySearch(data, size, value_5); // Faz a busca.
-    int index_6 = binarySearch(data, size, value_6); // Faz a busca.
-    int index_7 = binarySearch(data, size, value_7); // Faz a busca.
-    int index_8 = binarySearch(data, size, value_8); // Faz a busca.
-    int index_9 = binarySearch(data, size, value_9); // Faz a busca.
-    int index_10 = binarySearch(data, size, value_10); // Faz a busca.
+    // Faz a busca.
+    int index = binarySearch(data, size, value);
     
-    long long end = getTime(); // Finaliza o tempo.
-    double cpu_time_used = (end - start) / 1000000.0; // Faz o cálculo de quantos segundos.
+    end = clock(); // Finaliza a contagem.
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC; // Faz o cálculo de quantos segundos.
     
-    if(index_1 != -1 || index_2 != -1 || index_3 != -1 || index_4 != -1 || index_5 != -1 || index_6 != -1 || index_7 != -1 || index_8 != -1 || index_9 != -1 || index_10 != -1) printf("Binary Search;%d;%f\n", data_set, cpu_time_used); // Imprime na tela mostrando qual conjunto utilizado o tempo exigido para ordenação.
+    if(index != -1) printf("Binary Search;%d;%f\n", data_set, cpu_time_used); // Imprime na tela mostrando qual conjunto utilizado o tempo exigido para ordenação.
     else printf("Binary Search;%d;NULL\n", data_set);
-}
-
-long long getTime() {
-    FILETIME tempoArquivo;
-    GetSystemTimeAsFileTime(&tempoArquivo);
-
-    ULARGE_INTEGER tempo;
-    tempo.LowPart = tempoArquivo.dwLowDateTime;
-    tempo.HighPart = tempoArquivo.dwHighDateTime;
-
-    return tempo.QuadPart / 10; // Converter para microssegundos
 }
 
