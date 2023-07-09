@@ -1,0 +1,15 @@
+Existem dois tipos de usuário, admin e jogador.
+
+Login admin:
+bruno - 123
+
+Login jogador:
+gustavocosta
+
+O jogo consiste em 5 tentativas, tendo uma dica já exibida na tela. Uma letra por ver e a palavra secreta é atualizada automaticamente. 
+
+Todo código está comentado, se não todo, pelo menos todos os pontos principais.
+
+O arquivo da base está localizado na pasta database, assim como o arquivo da biblioteca para mysql.
+
+O código também está disponível em https://github.com/RobsonRR95/JogoDaForca
