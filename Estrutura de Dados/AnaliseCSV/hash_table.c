@@ -69,9 +69,15 @@ void freeHashTable(HashTable* hashTable) {
 }
 
 unsigned int hashFunction(int cityCode, int size) {
-    return cityCode % size;
-}
+    unsigned int hash = 0;
 
+    while (cityCode > 0) {
+        hash = (hash * 31) + (cityCode % 10);
+        cityCode /= 10;
+    }
+
+    return hash % size;
+}
 
 City* createCityNode(char* uf, int ufCode, int cityCode, char* name, int population) {
     City* city = (City*)malloc(sizeof(City));
@@ -91,9 +97,9 @@ City* createCityNode(char* uf, int ufCode, int cityCode, char* name, int populat
 }
 
 void insertCity(HashTable* hashTable, char* uf, int ufCode, int cityCode, char* name, int population) {
-    unsigned int index = hashFunction(cityCode, hashTable->size);
-
     City* city = createCityNode(uf, ufCode, cityCode, name, population);
+
+    unsigned int index = hashFunction(cityCode, hashTable->size);
 
     if (hashTable->table[index] == NULL) {
         hashTable->table[index] = city;
@@ -195,3 +201,59 @@ City* createCityArray(HashTable* hashTable, int totalCities) {
 }
 
 // -------------------- Fim da número 3 --------------------
+
+// -------------------- Início da número 6 --------------------
+
+void searchHashTable(HashTable* hashTable, int cityCode) {
+    printf("Busca na tabela de dispersao para o codigo %d:\n\n", cityCode);
+
+    unsigned int index = hashFunction(cityCode, hashTable->size);
+    City* city = hashTable->table[index];
+    int accessCount = 0;
+    int foundCount = 0;
+
+    while (city != NULL) {
+        accessCount++;
+
+        if (city->cityCode == cityCode) {
+            foundCount++;
+            printf("Registro encontrado na tabela de dispersao.\n");
+            printf("Indice: %u, Acessos: %d\n", index, accessCount);
+            printf("Codigo: %d, Municipio: %s, UF: %s, Populacao: %d\n", city->cityCode, city->name, city->uf, city->population);
+        }
+
+        city = city->next;
+    }
+
+    if (foundCount == 0) {
+        printf("Nenhum registro encontrado na tabela de dispersao para o codigo %d.\n", cityCode);
+    }
+}
+
+void searchBinarySearch(HashTable* hashTable, int cityCode) {
+    printf("\nBusca binaria na tabela de dispersao para o codigo %d:\n", cityCode);
+
+    unsigned int index = hashFunction(cityCode, hashTable->size);
+    City* city = hashTable->table[index];
+    int accessCount = 0;
+    int foundCount = 0;
+
+    while (city != NULL) {
+        accessCount++;
+
+        if (city->cityCode == cityCode) {
+            foundCount++;
+            printf("Registro encontrado na tabela de dispersao.\n");
+            printf("Indice: %u, Acessos: %d\n", index, accessCount);
+            printf("Codigo: %d, Municipio: %s, UF: %s, Populacao: %d\n", city->cityCode, city->name, city->uf, city->population);
+        }
+
+        city = city->next;
+    }
+
+    if (foundCount == 0) {
+        printf("Nenhum registro encontrado na tabela de dispersao para o codigo %d.\n", cityCode);
+    }
+}
+
+// -------------------- Fim da número 6 --------------------

@@ -26,6 +26,8 @@ int getTotalCities(HashTable* hashTable);
 City* createCityArray(HashTable* hashTable, int totalCities);
 int compareCities(const void* city1, const void* city2);
 int compareCityCode(const void* city1, const void* city2);
+void searchBinarySearch(HashTable* hashTable, int cityCode);
+void searchHashTable(HashTable* hashTable, int cityCode);
 
 
 #endif
